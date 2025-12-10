@@ -1,0 +1,86 @@
+/* Sayfanın tamamı için temel stil ayarları */
+body {
+    font-family: Arial, sans-serif; /* Klasik, okunabilir font */
+    background-color: #f4f4f4; /* Açık gri arka plan */
+    color: #333; /* Koyu metin rengi */
+    line-height: 1.6; /* Metinler arası boşluk */
+    margin: 0; /* Sayfa kenar boşluklarını sıfırla */
+    padding: 0;
+}
+
+/* Sayfa içeriğini ortalamak ve genişliğini sınırlamak için */
+main {
+    width: 80%; /* İçeriğin %80 genişliğinde olsun */
+    margin: 20px auto; /* Üstte 20px boşluk bırak, yatayda ortala */
+    padding: 20px;
+}
+
+/* Başlık alanı */
+header {
+    background: #333; /* Koyu arka plan */
+    color: #fff; /* Beyaz metin */
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Navigasyon menüsü */
+nav ul {
+    padding: 0;
+    list-style: none; /* Madde işaretlerini kaldır */
+    text-align: center;
+}
+
+nav ul li {
+    display: inline; /* Menü elemanlarını yan yana getir */
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none; /* Alt çizgiyi kaldır */
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ccc; /* Üzerine gelince rengi değiştir */
+}
+
+/* İçerik kutuları (Yazılar) */
+.icerik-kutusu {
+    background: #fff; /* İçerik kutularının arka planı beyaz olsun */
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd; /* Hafif bir çerçeve */
+    border-radius: 5px; /* Köşeleri hafif yuvarla */
+}
+
+.tarih {
+    font-style: italic;
+    color: #777;
+    font-size: 0.9em;
+    margin-top: -10px; /* Başlığa yakın durması için */
+}
+
+.detay-buton {
+    display: inline-block;
+    background: #5cb85c; /* Yeşil bir buton rengi */
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+/* Alt bilgi (Footer) */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+}
