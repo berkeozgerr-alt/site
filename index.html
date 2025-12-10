@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birleştirilmiş Klasik Web Sitem</title>
+    <title>Tam ve Fonksiyonel Web Sitem</title>
     
     <style>
-        /* Sayfanın tamamı için temel stil ayarları */
+        /* Genel Ayarlar */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -16,19 +16,20 @@
             padding: 0;
         }
 
-        /* Sayfa içeriğini ortalamak ve genişliğini sınırlamak için */
+        /* Ana Düzen */
         main {
             width: 80%;
             margin: 20px auto;
             padding: 20px;
         }
 
-        /* Başlık alanı */
+        /* Başlık Alanı */
         header {
             background: #333;
             color: #fff;
             padding: 1rem 0;
             text-align: center;
+            position: relative; /* Buton yerleşimi için */
         }
 
         header h1 {
@@ -36,7 +37,7 @@
             font-size: 2.5em;
         }
 
-        /* Navigasyon menüsü */
+        /* Navigasyon (Menü) */
         nav ul {
             padding: 0;
             list-style: none;
@@ -44,7 +45,7 @@
         }
 
         nav ul li {
-            display: inline;
+            display: inline; /* Büyük ekranlarda yan yana */
             margin: 0 15px;
         }
 
@@ -58,7 +59,20 @@
             color: #ccc;
         }
 
-        /* İçerik kutuları (Yazılar) */
+        /* Hamburger Butonu (JS tarafından kontrol edilecek) */
+        .menu-button {
+            display: none; /* Büyük ekranlarda gizli */
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2em;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        
+        /* İçerik Kutuları */
         .icerik-kutusu {
             background: #fff;
             padding: 20px;
@@ -84,7 +98,7 @@
             margin-top: 10px;
         }
 
-        /* Alt bilgi (Footer) */
+        /* Alt Bilgi */
         footer {
             text-align: center;
             padding: 1rem;
@@ -94,7 +108,7 @@
         }
 
         /* ================================== */
-        /* MOBİL UYUMLULUK (600px altı)      */
+        /* MOBİL UYUMLULUK (@media)           */
         /* ================================== */
         @media screen and (max-width: 600px) {
             
@@ -107,15 +121,28 @@
                 font-size: 1.8em;
             }
 
-            /* Mobil menü: Alt alta sırala */
+            /* Mobil butonu göster */
+            .menu-button {
+                display: block; 
+            }
+            
+            /* Navigasyon listesini varsayılan olarak gizle */
+            nav ul {
+                display: none; 
+                background: #444; 
+                padding: 10px 0;
+                margin-top: 10px;
+            }
+
+            /* Mobil menü elemanlarını alt alta sırala */
             nav ul li {
                 display: block;
                 margin: 10px 0;
             }
-
-            nav ul li a {
-                padding: 5px;
-                display: block;
+            
+            /* JS aktif hale getirdiğinde menüyü göster */
+            .active ul {
+                display: block; 
             }
 
             .icerik-kutusu h2 {
@@ -128,7 +155,9 @@
     
     <header>
         <h1>Klasik Site Başlığı</h1>
-        <nav>
+        <button class="menu-button" onclick="toggleMenu()">☰</button> 
+        
+        <nav id="anaMenu">
             <ul>
                 <li><a href="#">Ana Sayfa</a></li>
                 <li><a href="#">Hakkımızda</a></li>
@@ -140,26 +169,27 @@
 
     <main>
         <article class="icerik-kutusu">
-            <h2>İlk Yazımız</h2>
-            <p class="tarih">Yayınlanma Tarihi: 10 Aralık 2025</p>
+            <h2>Web Sitesi Temelleri</h2>
+            <p class="tarih">Güncel Sürüm: 10 Aralık 2025</p>
             
             <p>
-                Bu tek dosyalı (HTML, CSS ve JS dahil) kod versiyonu, projenin basitliğini koruyor. Normalde büyük projelerde CSS ve JS'i ayrı dosyalarda tutmak performansı artırır.
+                Bu tek dosya, bir web sayfasının temelini oluşturan üç katmanı barındırır: **HTML (Yapı)**, **CSS (Görünüm)** ve **JavaScript (Etkileşim)**.
+                Mobil cihazlarda, butona tıklayarak açılıp kapanan bir menüye sahip olacaksınız.
             </p>
             
             <p>
-                Ancak, öğrenme ve test etme amaçlı bu denemeler için tek bir dosya ile çalışmak çok daha kolaydır. Tarayıcınızın penceresini daraltarak mobil uyumluluğu test etmeyi unutmayın!
+                Geliştirmeye devam etmek için bu alanlara kendi içeriklerinizi ekleyebilirsiniz. Unutmayın, bu sadece bir başlangıç iskeletidir!
             </p>
             
-            <a href="#" class="detay-buton">Devamını Oku...</a>
+            <a href="#" class="detay-buton">Daha Fazla Bilgi</a>
         </article>
 
         <article class="icerik-kutusu">
-            <h2>Temel Kodlama Adımları</h2>
+            <h2>İskeletin Üç Temel Taşı</h2>
             <ol>
-                <li>HTML yapısı oluştur.</li>
-                <li>CSS ile stili ayarla (`<style>` etiketi içinde).</li>
-                <li>JavaScript ile etkileşim ekle (`<script>` etiketi içinde).</li>
+                <li>**HTML5:** Sayfadaki her şeyi tanımlar.</li>
+                <li>**CSS3:** Renk, boyut, yerleşim (mobil uyumluluk dahil) ayarlarını yapar.</li>
+                <li>**JavaScript (JS):** Menüyü açma/kapama gibi dinamik olayları yönetir.</li>
             </ol>
         </article>
     </main>
@@ -169,8 +199,19 @@
     </footer>
 
     <script>
-        // Sayfa yüklendiğinde bir uyarı (alert) gösterir.
-        alert("Sitemiz başarıyla yüklendi!");
+        function toggleMenu() {
+            // 'anaMenu' ID'li navigasyon elementini seçeriz.
+            var menu = document.getElementById("anaMenu");
+            
+            // Elementin sınıf listesini kontrol ederiz.
+            // Eğer 'active' sınıfı varsa (açıksa), onu kaldırırız (kapatırız).
+            if (menu.classList.contains("active")) {
+                menu.classList.remove("active");
+            } else {
+                // Eğer 'active' sınıfı yoksa (kapalıysa), onu ekleriz (açarız).
+                menu.classList.add("active");
+            }
+        }
     </script>
     </body>
 </html>
