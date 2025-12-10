@@ -3,9 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klasik Web Sitem</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <title>Birleştirilmiş Klasik Web Sitem</title>
+    
+    <style>
+        /* Sayfanın tamamı için temel stil ayarları */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Sayfa içeriğini ortalamak ve genişliğini sınırlamak için */
+        main {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        /* Başlık alanı */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Navigasyon menüsü */
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ccc;
+        }
+
+        /* İçerik kutuları (Yazılar) */
+        .icerik-kutusu {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .tarih {
+            font-style: italic;
+            color: #777;
+            font-size: 0.9em;
+            margin-top: -10px;
+        }
+
+        .detay-buton {
+            display: inline-block;
+            background: #5cb85c;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 3px;
+            margin-top: 10px;
+        }
+
+        /* Alt bilgi (Footer) */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        /* ================================== */
+        /* MOBİL UYUMLULUK (600px altı)      */
+        /* ================================== */
+        @media screen and (max-width: 600px) {
+            
+            main {
+                width: 95%;
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            /* Mobil menü: Alt alta sırala */
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            nav ul li a {
+                padding: 5px;
+                display: block;
+            }
+
+            .icerik-kutusu h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+    </head>
 <body>
     
     <header>
@@ -26,12 +144,11 @@
             <p class="tarih">Yayınlanma Tarihi: 10 Aralık 2025</p>
             
             <p>
-                Burası, klasik web sitemizin ana içerik alanıdır. HTML, sayfayı yapılandırmak için kullanılırken, CSS bu metnin nasıl görüneceğini belirler.
-                Bu basit yapı, tüm modern web sitelerinin temelini oluşturur. Amacımız, en temel adımları atarak bir web sayfası oluşturmaktır.
+                Bu tek dosyalı (HTML, CSS ve JS dahil) kod versiyonu, projenin basitliğini koruyor. Normalde büyük projelerde CSS ve JS'i ayrı dosyalarda tutmak performansı artırır.
             </p>
             
             <p>
-                Navigasyon menüsünü (Ana Sayfa, Hakkımızda vb.) kullanarak farklı sayfalara bağlantı verebilirsiniz. Şimdilik hepsi aynı sayfaya dönüyor.
+                Ancak, öğrenme ve test etme amaçlı bu denemeler için tek bir dosya ile çalışmak çok daha kolaydır. Tarayıcınızın penceresini daraltarak mobil uyumluluğu test etmeyi unutmayın!
             </p>
             
             <a href="#" class="detay-buton">Devamını Oku...</a>
@@ -40,10 +157,9 @@
         <article class="icerik-kutusu">
             <h2>Temel Kodlama Adımları</h2>
             <ol>
-                <li>HTML dosyası (`index.html`) oluştur.</li>
-                <li>CSS dosyası (`style.css`) oluştur.</li>
-                <li>HTML içinde CSS'e bağlantı ver (`<link rel="stylesheet" href="style.css">`).</li>
-                <li>Tarayıcıda dosyayı aç ve sonucu gör!</li>
+                <li>HTML yapısı oluştur.</li>
+                <li>CSS ile stili ayarla (`<style>` etiketi içinde).</li>
+                <li>JavaScript ile etkileşim ekle (`<script>` etiketi içinde).</li>
             </ol>
         </article>
     </main>
@@ -52,5 +168,9 @@
         <p>&copy; 2025 Klasik Site Örneği. Tüm hakları saklıdır.</p>
     </footer>
 
-</body>
+    <script>
+        // Sayfa yüklendiğinde bir uyarı (alert) gösterir.
+        alert("Sitemiz başarıyla yüklendi!");
+    </script>
+    </body>
 </html>
