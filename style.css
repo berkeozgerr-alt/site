@@ -84,3 +84,37 @@ footer {
     color: #fff;
     margin-top: 20px;
 }
+/* ================================== */
+/* MOBİL UYUMLULUK           */
+/* ================================== */
+
+/* Ekran genişliği 600 piksel ve altındayken uygulanacak stiller */
+@media screen and (max-width: 600px) {
+    
+    /* Ana içerik alanının genişliğini artır */
+    main {
+        width: 95%; /* Mobil cihazlarda daha az kenar boşluğu bırakmak için */
+        padding: 10px;
+    }
+
+    /* Başlık fontunu küçült */
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    /* Navigasyon menüsünü alt alta sırala */
+    nav ul li {
+        display: block; /* Elemanları yan yana olmaktan çıkar, alt alta getir */
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        padding: 5px;
+        display: block; /* Tıklama alanını genişletmek için */
+    }
+
+    /* İçerik başlıklarını küçült */
+    .icerik-kutusu h2 {
+        font-size: 1.5em;
+    }
+}
